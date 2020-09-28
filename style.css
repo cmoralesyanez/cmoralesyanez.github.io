@@ -16,7 +16,7 @@ main {
 }
 
 header {
-    background-color: white;
+    background-color: black;
     position: fixed;
     top: 0;
     left: 0;
@@ -36,7 +36,7 @@ header li {
 }
 
 header li a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
