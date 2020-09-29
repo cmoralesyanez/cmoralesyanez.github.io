@@ -3,23 +3,24 @@ header img {
     margin-left: 40px;
 }
 body {
-    height: 125vh;
-    background-image: url('https://codetheweb.blog/assets/img/posts/style-a-navigation-bar-css/background.jpg');
+    background-image: url("Map.png");
     background-size: cover;
     font-family: sans-serif;
     margin-top: 80px;
     padding: 30px;
-}
+   }
 
 main {
-    color: white;
+    color: black;
 }
 
 header {
     background-color: black;
+    color: white;
+   color: white;  
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0px;
     right: 0;
     height: 80px;
     display: flex;
@@ -29,14 +30,16 @@ header {
 
 header * {
     display: inline;
+    margin: 10px;
 }
 
 header li {
-    margin: 20px;
+    margin: 10px;
 }
 
 header li a {
     color: white;
+    font-size:20px;
     text-decoration: none;
 }
 
