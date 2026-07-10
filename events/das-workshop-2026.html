@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAS Workshop 2026 — Universidad de Concepción</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --clr-bg: #0a0f1e;
+    --clr-surface: #111827;
+    --clr-card: #1a2236;
+    --clr-border: rgba(255,255,255,0.08);
+    --clr-accent: #3b82f6;
+    --clr-accent-warm: #f59e0b;
+    --clr-text: #f0f4ff;
+    --clr-muted: #94a3b8;
+    --clr-pulse: rgba(59,130,246,0.15);
+    --font-sans: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --font-serif: 'IBM Plex Serif', serif;
+  }
+
+  body {
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  a { color: var(--clr-accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,15,30,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--clr-border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 60px;
+  }
+  .nav-brand {
+    font-family: var(--font-mono);
+    font-size: 13px; letter-spacing: 0.08em;
+    color: var(--clr-accent);
+    font-weight: 500;
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-size: 13px; color: var(--clr-muted);
+    letter-spacing: 0.04em; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--clr-text); text-decoration: none; }
+  .nav-cta {
+    background: var(--clr-accent);
+    color: #fff !important;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 13px !important;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #2563eb !important; text-decoration: none !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 90vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 2rem 4rem;
+    max-width: 1100px; margin: 0 auto;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px; letter-spacing: 0.15em;
+    color: var(--clr-accent);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    max-width: 820px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--clr-accent-warm);
+  }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--clr-muted);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+  .hero-meta {
+    display: flex; gap: 2rem; flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .meta-item {
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .meta-label {
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.12em;
+    color: var(--clr-accent); text-transform: uppercase;
+  }
+  .meta-value {
+    font-size: 15px; font-weight: 500;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--clr-accent);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-size: 14px; font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #2563eb; text-decoration: none; transform: translateY(-1px); }
+  .btn-secondary {
+    border: 1px solid var(--clr-border);
+    color: var(--clr-text);
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-size: 14px; font-weight: 400;
+    transition: border-color 0.2s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.04); text-decoration: none; }
+
+  /* SEISMIC DECORATION */
+  .seismic-line {
+    position: absolute; right: -2rem; top: 50%;
+    transform: translateY(-50%);
+    width: 420px; opacity: 0.12;
+    pointer-events: none;
+  }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.15em;
+    color: var(--clr-accent); text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  .section-lead {
+    color: var(--clr-muted);
+    font-size: 1rem;
+    max-width: 680px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .about-text p { color: var(--clr-muted); margin-bottom: 1.2rem; line-height: 1.9; }
+  .about-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .stat-card {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: 8px;
+    padding: 1.5rem 1.25rem;
+  }
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--clr-accent-warm);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-desc { font-size: 13px; color: var(--clr-muted); }
+
+  /* PROGRAM */
+  .program-bg { background: var(--clr-surface); }
+  .days-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+  .day-card {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: 8px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+  }
+  .day-label {
+    background: linear-gradient(180deg, rgba(59,130,246,0.18) 0%, rgba(59,130,246,0.05) 100%);
+    border-right: 1px solid var(--clr-border);
+    padding: 2rem 1rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  }
+  .day-num {
+    font-family: var(--font-mono);
+    font-size: 28px; font-weight: 500;
+    color: var(--clr-accent);
+    line-height: 1;
+  }
+  .day-month {
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.1em;
+    color: var(--clr-muted); text-transform: uppercase;
+  }
+  .day-content { padding: 1.75rem 2rem; }
+  .day-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem; font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .day-place {
+    font-family: var(--font-mono);
+    font-size: 11px; color: var(--clr-accent-warm);
+    letter-spacing: 0.06em; margin-bottom: 1rem;
+  }
+  .day-desc { font-size: 14px; color: var(--clr-muted); line-height: 1.8; }
+  .day-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1rem; }
+  .tag {
+    font-size: 11px; font-family: var(--font-mono);
+    padding: 3px 10px; border-radius: 3px;
+    border: 1px solid rgba(59,130,246,0.3);
+    color: var(--clr-accent);
+    letter-spacing: 0.04em;
+  }
+
+  /* SPEAKERS */
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .speaker-card {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: 8px;
+    padding: 1.75rem;
+    transition: border-color 0.2s;
+  }
+  .speaker-card:hover { border-color: rgba(59,130,246,0.4); }
+  .speaker-avatar {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f2a4a 100%);
+    border: 2px solid rgba(59,130,246,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 16px; font-weight: 500;
+    color: var(--clr-accent);
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+  }
+  .speaker-name {
+    font-size: 15px; font-weight: 500; margin-bottom: 2px;
+  }
+  .speaker-role {
+    font-size: 12px; color: var(--clr-accent);
+    font-family: var(--font-mono); letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+  .speaker-inst {
+    font-size: 12px; color: var(--clr-muted);
+    margin-bottom: 1rem;
+  }
+  .speaker-bio {
+    font-size: 13px; color: var(--clr-muted); line-height: 1.7;
+  }
+  .speaker-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 12px; color: var(--clr-accent);
+    margin-top: 0.75rem; font-family: var(--font-mono);
+  }
+
+  /* ORGANIZERS */
+  .org-bg { background: var(--clr-surface); }
+  .organizers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .org-card {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: 8px;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+  }
+  .org-avatar {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: linear-gradient(135deg, #1a2f50 0%, #0f1f35 100%);
+    border: 2px solid var(--clr-border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 20px; font-weight: 500;
+    color: var(--clr-accent-warm);
+    margin: 0 auto 1rem;
+  }
+  .org-name { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+  .org-title { font-size: 12px; color: var(--clr-muted); line-height: 1.5; }
+
+  /* GRANTS */
+  .grants-box {
+    background: var(--clr-card);
+    border: 1px solid rgba(245,158,11,0.25);
+    border-radius: 8px;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .grants-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem; font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  .grants-info p { font-size: 14px; color: var(--clr-muted); line-height: 1.8; margin-bottom: 1rem; }
+  .grant-amount {
+    font-family: var(--font-mono);
+    font-size: 2rem; font-weight: 500;
+    color: var(--clr-accent-warm);
+    margin-bottom: 4px;
+  }
+  .grant-label { font-size: 12px; color: var(--clr-muted); margin-bottom: 1.5rem; }
+  .grant-conditions { list-style: none; }
+  .grant-conditions li {
+    font-size: 13px; color: var(--clr-muted);
+    padding: 6px 0; border-bottom: 1px solid var(--clr-border);
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .grant-conditions li::before { content: "—"; color: var(--clr-accent); font-size: 11px; flex-shrink: 0; }
+
+  /* SPONSORS */
+  .sponsors-grid {
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: 2rem; justify-content: center;
+  }
+  .sponsor-badge {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: 8px;
+    padding: 1.25rem 2rem;
+    display: flex; align-items: center; justify-content: center;
+    min-width: 160px; min-height: 80px;
+  }
+  .sponsor-logo-placeholder {
+    width: 120px; height: 44px;
+    border: 1.5px dashed rgba(148,163,184,0.25);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 0.1em;
+    color: rgba(148,163,184,0.35);
+    text-transform: uppercase;
+  }
+  .sponsor-badge img {
+    max-width: 120px; max-height: 44px;
+    object-fit: contain; opacity: 0.75;
+    filter: brightness(0) invert(1);
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--clr-border);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+  .footer-title {
+    font-family: var(--font-mono);
+    font-size: 12px; letter-spacing: 0.1em;
+    color: var(--clr-accent); text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .footer-sub { font-size: 13px; color: var(--clr-muted); margin-bottom: 1.5rem; }
+  .footer-contact { font-size: 13px; color: var(--clr-muted); }
+  .footer-contact a { color: var(--clr-accent); }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--clr-border); margin: 0; }
+
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .grants-box { grid-template-columns: 1fr; gap: 1.5rem; }
+    .day-card { grid-template-columns: 70px 1fr; }
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .hero { padding: 4rem 1rem 3rem; }
+    section { padding: 3rem 1rem; }
+    .seismic-line { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">DAS WORKSHOP · SEP 2026</span>
+  <div class="nav-links">
+    <a href="#program">Program</a>
+    <a href="#speakers">Speakers</a>
+    <a href="#organizers">Organizers</a>
+    <a href="#grants">Grants</a>
+    <a href="#apply" class="nav-cta">Apply now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1100px; margin:0 auto; position:relative; overflow:hidden;">
+  <div class="hero">
+    <p class="hero-eyebrow">Universidad de Concepción · Chile · 2 – 4 September 2026</p>
+    <h1>Training on <em>Distributed Acoustic Sensing</em> for earthquake research</h1>
+    <p class="hero-sub">A three-day hands-on workshop to build scientific capacity in Chile for DAS technology — from theory to field deployment to data analysis.</p>
+
+    <div class="hero-meta">
+      <div class="meta-item">
+        <span class="meta-label">Dates</span>
+        <span class="meta-value">Sep 2 – 4, 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Location</span>
+        <span class="meta-value">UdeC, Concepción, Chile</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Capacity</span>
+        <span class="meta-value">25 – 40 participants</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Fees</span>
+        <span class="meta-value">Free for students</span>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="https://forms.gle" id="apply" class="btn-primary">Apply for a spot</a>
+      <a href="#program" class="btn-secondary">View program ↓</a>
+    </div>
+
+    <svg class="seismic-line" viewBox="0 0 420 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="0,100 40,100 50,60 60,140 70,80 80,120 95,100 120,100 130,30 140,170 150,50 160,150 170,90 185,110 200,100 240,100 250,75 260,125 270,100 300,100 310,85 320,115 330,100 360,100 370,65 380,135 390,100 420,100" stroke="white" stroke-width="1.5" fill="none"/>
+    </svg>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">About the workshop</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Chile sits at one of the world's most active tectonic boundaries, yet access to distributed acoustic sensing (DAS) expertise and infrastructure remains extremely limited in the country. This workshop directly addresses that gap.</p>
+        <p>Over three days, participants will move from the fundamentals of fiber-optic sensing through to real field deployment on the UdeC campus and full data-analysis pipelines — including modern open-source tools and machine learning approaches.</p>
+        <p>The workshop is designed to democratize knowledge: fees are waived for students, travel scholarships are available, and participation from underrepresented groups, women, and early-career scientists is actively prioritized.</p>
+        <p>Supported by the <a href="https://www.seismosoc.org/grants-and-fellowship/the-ssa-community-grants-program/" target="_blank"><strong>SSA Community Grants Program</strong></a> (USD 5,000 award).</p>
+      </div>
+      <div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-desc">Full days of training</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">40</div>
+            <div class="stat-desc">Expected participants</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">1st</div>
+            <div class="stat-desc">Hands-on DAS training in Chile</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">$0</div>
+            <div class="stat-desc">Fee for students</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROGRAM -->
+<section id="program" class="program-bg">
+  <div class="container">
+    <p class="section-label">Program</p>
+    <h2 class="section-title">Three days, one complete pipeline</h2>
+    <p class="section-lead">From seismic theory to fiber deployment to earthquake products — participants leave with practical skills and a working toolkit.</p>
+
+    <div class="days-grid">
+      <div class="day-card">
+        <div class="day-label">
+          <div class="day-num">02</div>
+          <div class="day-month">Sep</div>
+        </div>
+        <div class="day-content">
+          <div class="day-title">Day 1 — Scientific overview &amp; seminars</div>
+          <div class="day-place">📍 Auditorio CFM · Universidad de Concepción</div>
+          <div class="day-desc">Invited talks covering DAS theory, fiber sensing fundamentals, and international case studies. National and international speakers will present applications in earthquake analysis, seismic imaging, seismic hazard, and structural monitoring. Space reserved for lightning talks by students and early-career researchers.</div>
+          <div class="day-tags">
+            <span class="tag">DAS theory</span>
+            <span class="tag">Applications</span>
+            <span class="tag">Invited talks</span>
+            <span class="tag">Student talks</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-label">
+          <div class="day-num">03</div>
+          <div class="day-month">Sep</div>
+        </div>
+        <div class="day-content">
+          <div class="day-title">Day 2 — Instrumentation &amp; field deployment</div>
+          <div class="day-place">📍 UdeC campus · outdoor fiber-optic network</div>
+          <div class="day-desc">Hands-on experience with the DAS instrument. Participants learn deployment best practices, safety protocols, and logistical considerations, then deploy the fiber-optic cable on campus. Real seismic signals are recorded during the session — data used in Day 3.</div>
+          <div class="day-tags">
+            <span class="tag">Instrumentation</span>
+            <span class="tag">Field deployment</span>
+            <span class="tag">Data acquisition</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-label">
+          <div class="day-num">04</div>
+          <div class="day-month">Sep</div>
+        </div>
+        <div class="day-content">
+          <div class="day-title">Day 3 — Data processing &amp; interpretation</div>
+          <div class="day-place">📍 Universidad de Concepción · computer lab</div>
+          <div class="day-desc">Full workshop: "Introduction to DAS for Seismology." Participants work with DAS data formats, preprocessing pipelines, the DASDAE open environment, and PhaseNet-DAS machine learning tools for phase picking. Group exercises, plenary discussion on future research directions in Chile, and an evening outreach talk open to the public.</div>
+          <div class="day-tags">
+            <span class="tag">Data formats</span>
+            <span class="tag">DASDAE</span>
+            <span class="tag">PhaseNet-DAS</span>
+            <span class="tag">ML picking</span>
+            <span class="tag">Public outreach</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SPEAKERS -->
+<section id="speakers">
+  <div class="container">
+    <p class="section-label">Invited speakers</p>
+    <h2 class="section-title">International experts in fiber sensing</h2>
+    <p class="section-lead">Leading researchers bringing cutting-edge DAS expertise to Chile for the first time.</p>
+
+    <div class="speakers-grid">
+      <div class="speaker-card">
+        <div class="speaker-avatar">EW</div>
+        <div class="speaker-name">Ethan F. Williams</div>
+        <div class="speaker-role">Main instructor &amp; principal speaker</div>
+        <div class="speaker-inst">Assistant Professor, Earth &amp; Planetary Sciences · UC Santa Cruz</div>
+        <div class="speaker-bio">Applies fiber-optic sensing to seismology, oceanography, and acoustics. Research spans subduction geohazards, ocean–solid Earth interaction, and structural monitoring using DAS. Ph.D. Caltech (2023). GHI Postdoctoral Scholar, University of Washington (2023–2025).</div>
+        <a href="https://ethanfwilliams.github.io/" target="_blank" class="speaker-link">↗ ethanfwilliams.github.io</a>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-avatar">EB</div>
+        <div class="speaker-name">Ettore Biondi</div>
+        <div class="speaker-role">Invited speaker</div>
+        <div class="speaker-inst">Assistant Professor of Geophysics · Stanford University</div>
+        <div class="speaker-bio">Research centers on fiber sensing and dense seismic arrays for geophysical applications — from volcanic system dynamics and earthquake physics to early warning systems and climate-related environmental sensing. Ph.D. Stanford (2021).</div>
+        <a href="https://geophysics.stanford.edu/people/ettore-biondi-0" target="_blank" class="speaker-link">↗ Stanford profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ORGANIZERS -->
+<section id="organizers" class="org-bg">
+  <div class="container">
+    <p class="section-label">Organizing committee</p>
+    <h2 class="section-title">Meet the team</h2>
+    <p class="section-lead">Researchers from Universidad de Concepción and UC Santa Cruz.</p>
+
+    <div class="organizers-grid">
+      <div class="org-card">
+        <div class="org-avatar">CM</div>
+        <div class="org-name">Catalina Morales-Yáñez</div>
+        <div class="org-title">Assistant Professor<br>Universidad de Concepción<br><span style="color:var(--clr-accent);font-size:11px;">Lead organizer</span></div>
+      </div>
+      <div class="org-card">
+        <div class="org-avatar">JO</div>
+        <div class="org-name">Javier Ojeda</div>
+        <div class="org-title">Postdoctoral Researcher<br>Universidad de Concepción<br><span style="color:var(--clr-accent);font-size:11px;">Scientific coordination</span></div>
+      </div>
+      <div class="org-card">
+        <div class="org-avatar">EW</div>
+        <div class="org-name">Ethan Williams</div>
+        <div class="org-title">Assistant Professor<br>UC Santa Cruz<br><span style="color:var(--clr-accent);font-size:11px;">International coord.</span></div>
+      </div>
+      <div class="org-card">
+        <div class="org-avatar">GM</div>
+        <div class="org-name">Gonzalo Montalva</div>
+        <div class="org-title">Full Professor<br>Universidad de Concepción<br><span style="color:var(--clr-accent);font-size:11px;">Local logistics</span></div>
+      </div>
+      <div class="org-card">
+        <div class="org-avatar">EB</div>
+        <div class="org-name">Emily Brodsky</div>
+        <div class="org-title">Full Professor<br>UC Santa Cruz<br><span style="color:var(--clr-accent);font-size:11px;">International coord.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- GRANTS -->
+<section id="grants">
+  <div class="container">
+    <p class="section-label">Travel grants</p>
+    <h2 class="section-title">Support for participants</h2>
+    <p class="section-lead">We believe financial barriers shouldn't prevent talented researchers from participating. Limited travel grants are available.</p>
+
+    <div class="grants-box">
+      <div class="grants-info">
+        <h3>Student &amp; early-career grants</h3>
+        <p>Travel scholarships are available to support participants from outside Concepción — particularly students, early-career scientists, and members of underrepresented groups who lack access to national or other funding sources.</p>
+        <p>Priority is given to students and first-generation professionals. Workshop fees are fully waived for all students.</p>
+        <a href="https://forms.gle" class="btn-primary" style="font-size:13px; padding:10px 20px;">Apply for a grant ↗</a>
+      </div>
+      <div>
+        <div class="grant-amount">USD 100</div>
+        <div class="grant-label">Maximum grant per recipient (limited budget)</div>
+        <ul class="grant-conditions">
+          <li>Open to students and early-career researchers</li>
+          <li>Priority for participants outside Concepción</li>
+          <li>Priority for underrepresented groups</li>
+          <li>Workshop registration required</li>
+          <li>Limited funds — apply early</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SPONSORS -->
+<section id="sponsors">
+  <div class="container" style="text-align:center;">
+    <p class="section-label" style="text-align:center; margin-bottom:2rem;">Supported by</p>
+    <div class="sponsors-grid">
+      <div class="sponsor-badge">
+        <a href="https://www.dgeo.udec.cl" target="_blank" rel="noopener" style="display:flex;">
+          <img src="images/dgeo-udec.png" alt="Departamento de Geofísica, Universidad de Concepción">
+        </a>
+      </div>
+      <div class="sponsor-badge">
+        <a href="https://fi.udec.cl" target="_blank" rel="noopener" style="display:flex;">
+          <img src="images/fi-udec.png" alt="Facultad de Ingeniería, Universidad de Concepción">
+        </a>
+      </div>
+      <div class="sponsor-badge">
+        <a href="https://seismo.sites.ucsc.edu" target="_blank" rel="noopener" style="display:flex;">
+          <img src="images/ucsc.png" alt="UC Santa Cruz Seismology Lab">
+        </a>
+      </div>
+      <div class="sponsor-badge">
+        <img src="images/stanford.png" alt="Stanford University">
+      </div>
+      <div class="sponsor-badge" style="border-color:rgba(245,158,11,0.2);">
+        <a href="https://www.seismosoc.org" target="_blank" rel="noopener" style="display:flex;">
+          <img src="images/ssa.png" alt="Seismological Society of America">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-title">DAS Workshop · Concepción 2026</div>
+    <div class="footer-sub">Training on Distributed Acoustic Sensing for earthquake research and seismic building response</div>
+    <div class="footer-contact">
+      Questions? Contact us at <a href="mailto:catalinamorales@udec.cl">catalinamorales@udec.cl</a>
+    </div>
+    <div style="margin-top:2rem; font-size:11px; color:rgba(148,163,184,0.4); font-family:var(--font-mono); letter-spacing:0.06em;">
+      Universidad de Concepción · Facultad de Ingeniería · Facultad de Ciencias Físicas y Matemáticas
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
