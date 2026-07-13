@@ -72,21 +72,6 @@
 
   <section>
     <div class="section-head">
-      <p class="eyebrow">Reels</p>
-      <h2>Instagram Reels</h2>
-      <p>Drag or use the arrows to browse.</p>
-    </div>
-    <div class="carousel-nav">
-      <button class="carousel-btn" onclick="scrollCarousel('reel-carousel', -1)" aria-label="Scroll left">‹</button>
-      <button class="carousel-btn" onclick="scrollCarousel('reel-carousel', 1)" aria-label="Scroll right">›</button>
-    </div>
-    <div class="carousel-row"><div class="carousel" id="reel-carousel"></div></div>
-  </section>
-
-  <hr class="divider" />
-
-  <section>
-    <div class="section-head">
       <p class="eyebrow">News &amp; media</p>
       <h2>Press, TV &amp; radio</h2>
     </div>
@@ -133,7 +118,6 @@
 <script>
   renderCarousel("video-carousel", "video");
   renderCarousel("podcast-carousel", "podcast");
-  renderCarousel("reel-carousel", "reel");
   renderMedia();
   document.getElementById("scicomm-list").innerHTML = SCICOMM_TALKS.map(t => `<li><strong>${t.title}</strong><div class="pub-meta">${t.venue}</div></li>`).join("");
   document.getElementById("confog-list").innerHTML = CONFERENCE_ORG.map(c => `<li><strong>[${c.year}]</strong> ${c.url ? `<a href="${c.url}" target="_blank" rel="noopener">${c.title}</a>` : c.title}</li>`).join("");
