@@ -26,7 +26,16 @@ const EVENTS = [
     page: ""
   },
   {
-    year: "2021–present",
+    year: 2023,
+    type: "talk-series",
+    title: "AndesNet Scientific Discussion Meetings",
+    role: "Committee member",
+    venue: "AndesNet — Red de geocientistas de la zona de subducción chilena",
+    url: "https://andesnetinfo.wixsite.com/andesnet",
+    page: ""
+  },
+  {
+    year: "2021 - 2022",
     type: "talk-series",
     title: "Conversaciones Precursoras",
     role: "Co-organizer",
@@ -41,15 +50,6 @@ const EVENTS = [
     role: "Co-organizer",
     venue: "Geocharlas T3 Talks Project",
     url: "https://geocharlast3.weebly.com/",
-    page: ""
-  },
-  {
-    year: "ongoing",
-    type: "talk-series",
-    title: "AndesNet Scientific Discussion Meetings",
-    role: "Committee member",
-    venue: "AndesNet — Red de geocientistas de la zona de subducción chilena",
-    url: "https://andesnetinfo.wixsite.com/andesnet",
     page: ""
   },
   {

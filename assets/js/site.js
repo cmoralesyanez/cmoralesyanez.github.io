@@ -18,7 +18,8 @@ function renderStats(targetId){
   `;
   const note = document.getElementById(targetId + "-note");
   if(note){
-    note.innerHTML = `Citation count is a manual snapshot from <a href="${SITE_STATS.scholarUrl}" target="_blank" rel="noopener">Google Scholar</a> as of ${SITE_STATS.asOf} — Scholar profiles can't be auto-embedded, so this updates whenever <code>data/site-data.js</code> is edited.`;
+    note.innerHTML = `Citation count is a manual snapshot from <a href="${SITE_STATS.scholarUrl}" target="_blank" rel="noopener">Google Scholar</a> as of ${SITE_STATS.asOf} `;
+  //  — Scholar profiles can't be auto-embedded, so this updates whenever <code>data/site-data.js</code> is edited.`;
   }
 }
 

@@ -9,6 +9,20 @@
 
 const JOURNAL_ARTICLES = [
   {
+    year: 2026,
+    authors: "Stankiewicz, M., Salazar, R., Czechlewski, M., Muñoz Jensen, A., <b>Morales-Yáñez, C.</b>, Sakarya, O., Viveros Carrasco, J., Viveros Carrasco, S., Lima, G. & Horodecki, K",
+    title: "Benchmarking weak randomness in quantum and natural sources",
+    venue: "Journal of Physics A: Mathematical and Theoretical, 59(24), 245305.",
+    link: "https://doi.org/10.1088/1751-8121/ae7680"
+  },
+  {
+    year: 2026,
+    authors: "Pastén-Araya, F., Carrasco, S., <b>Morales-Yáñez, C.</b>, Rivera, E., Cabrera, L., Ruiz, S., & Salazar, P.",
+    title: "Rheological contrast traps and controls MW 6.8 Michilla (northern Chile) intraslab aftershocks",
+    venue: "Geology, 54 (7): 717–721",
+    link: "https://doi.org/10.1130/G53833.1"
+  },
+  {
     year: 2025,
     authors: "Marchant, G., Benavente, R., Becerra-Carreño, V., Crempien, J., <b>Morales-Yáñez, C.</b>",
     title: "Characterizing Spatial Correlations in Coseismic Slip Distributions: A Data Driven Bayesian Inference Approach",
@@ -60,8 +74,6 @@ const JOURNAL_ARTICLES = [
 ];
 
 const IN_PREPARATION = [
-  "Pasten Araya, F., <b>Morales-Yáñez, C.</b>, Rivera, E., Ruiz, S., Cabrera, L., Novoa, MJ., Salazar, P. — Trapped rupture from intermediate-depth earthquakes, evidenced by persistent microseismicity.",
-  "Stankiewicz, M., Salazar, R., Sakarya, O., Horodecki, K., Múñoz, A., <b>Morales-Yáñez, C.</b>, Viveros-Carrasco, J., Czechlewski, M., Horodecki, P. — Quantum amplification of semi-random sequences obtained from seismic events.",
   "<b>Morales-Yáñez, C.</b>, Benavente, R., Cummins, P., Sambridge, M., Hawkins, R. — A data-driven Bayesian methodology to estimate 2D b-value variations.",
   "Merino, J.P., <b>Morales-Yáñez, C.</b>, Benavente, R., Castro, S., Ortega-Culaciati, F., Donoso, F., Moreno, M. — A Bayesian transdimensional approach for Characterizing Transients in GNSS time series.",
   "Diaz, N., <b>Morales-Yáñez, C.</b>, Ruiz, J., Ortega-Culaciati, F., Rivera, L. — Retrieving source-time function from near-field records in northern Chile."
@@ -70,8 +82,8 @@ const IN_PREPARATION = [
 const CONFERENCE_WORK = [
   { year: 2026, title: "b-transD: Spatial and temporal variation of b-value and their uncertainty using Bayesian trans-dimensional inference", venue: "European Geosciences Union General Assembly, Vienna, Austria", kind: "Talk", link: "https://meetingorganizer.copernicus.org/EGU26/EGU26-8613.html" },
 
-  { year: 2025, title: "Contributed talk", venue: "VII Coloquio sobre Señales Geofísicas de Terremotos y Volcanes (GSEV), Valparaíso, Chile", kind: "Talk", link: "https://sites.google.com/view/gsev/program?authuser=0" },
-  { year: 2025, title: "Contributed talk", venue: "IV Congreso de Amenaza Sísmica (GIASIS), Chile", kind: "Talk", link: "https://sites.google.com/view/ivcongresoamenaza/programa?authuser=0" },
+  { year: 2025, title: "How important is it to account for uncertainties in the moment tensor solutions?", venue: "VII Coloquio sobre Señales Geofísicas de Terremotos y Volcanes (GSEV), Valparaíso, Chile", kind: "Talk", link: "https://sites.google.com/view/gsev/program?authuser=0" },
+  { year: 2025, title: "Spatial changes in b-value and their uncertainty analysis", venue: "IV Congreso de Amenaza Sísmica (GIASIS), Chile", kind: "Talk", link: "https://sites.google.com/view/ivcongresoamenaza/programa?authuser=0" },
   { year: 2025, title: "2D Bayesian transdimensional inversion for b-value variations", venue: "European Geosciences Union General Assembly, Vienna, Austria", kind: "Talk", link: "https://meetingorganizer.copernicus.org/EGU25/EGU25-14527.html" },
   { year: 2025, title: "Evaluation of the Coulomb stress changes between the 1960 Concepción and Valdivia earthquakes in southern Chile", venue: "European Geosciences Union General Assembly, Vienna, Austria", kind: "Supervising", link: "https://meetingorganizer.copernicus.org/EGU25/EGU25-497.html" },
   { year: 2025, title: "Seismicity of the south-western South American margin through a machine learning automated approach", venue: "European Geosciences Union General Assembly, Vienna, Austria", kind: "Co-Inv", link: "https://meetingorganizer.copernicus.org/EGU25/EGU25-14177.html" },

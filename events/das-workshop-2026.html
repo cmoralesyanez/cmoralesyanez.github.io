@@ -260,7 +260,7 @@
   }
   .speaker-card:hover { border-color: rgba(59,130,246,0.4); }
   .speaker-avatar {
-    width: 60px; height: 60px; border-radius: 50%;
+    width: 150px; height: 180px; border-radius: 10%;
     background: linear-gradient(135deg, #1e3a5f 0%, #0f2a4a 100%);
     border: 2px solid rgba(59,130,246,0.3);
     display: flex; align-items: center; justify-content: center;
@@ -317,6 +317,12 @@
   }
   .org-name { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
   .org-title { font-size: 12px; color: var(--clr-muted); line-height: 1.5; }
+  .org-card .speaker-avatar { margin: 0 auto 1rem; }
+  .org-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 11px; color: var(--clr-accent);
+    margin-top: 0.6rem; font-family: inherit;
+  }
 
   /* GRANTS */
   .grants-box {
@@ -364,7 +370,7 @@
     min-width: 160px; min-height: 80px;
   }
   .sponsor-logo-placeholder {
-    width: 120px; height: 44px;
+    width: 120px; height: 90px;
     border: 1.5px dashed rgba(148,163,184,0.25);
     border-radius: 4px;
     display: flex; align-items: center; justify-content: center;
@@ -374,8 +380,8 @@
     text-transform: uppercase;
   }
   .sponsor-badge img {
-    max-width: 120px; max-height: 44px;
-    object-fit: contain; opacity: 0.75;
+    max-width: 300px; max-height: 60px;
+    object-fit: contain; opacity: 0.95;
     filter: brightness(0) invert(1);
   }
 
@@ -420,7 +426,7 @@
     <a href="#speakers">Speakers</a>
     <a href="#organizers">Organizers</a>
     <a href="#grants">Grants</a>
-    <a href="#apply" class="nav-cta">Apply now</a>
+    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=nitYViSI0EmmZc0yjA4ASpZGknwmsqZCoeoxSPl8frZUOEZOQllQQzBSS1VTTTg3UkszN1A1WjNOTC4u" class="nav-cta">Apply now</a>
   </div>
 </nav>
 
@@ -469,10 +475,10 @@
     <p class="section-label">About the workshop</p>
     <div class="about-grid">
       <div class="about-text">
-        <p>Chile sits at one of the world's most active tectonic boundaries, yet access to distributed acoustic sensing (DAS) expertise and infrastructure remains extremely limited in the country. This workshop directly addresses that gap.</p>
-        <p>Over three days, participants will move from the fundamentals of fiber-optic sensing through to real field deployment on the UdeC campus and full data-analysis pipelines — including modern open-source tools and machine learning approaches.</p>
-        <p>The workshop is designed to democratize knowledge: it is free for all participants, travel scholarships are available, and participation from underrepresented groups, women, and early-career scientists is actively prioritized.</p>
-        <p>Supported by the <a href="https://www.seismosoc.org/grants-and-fellowship/the-ssa-community-grants-program/" target="_blank"><strong>SSA Community Grants Program</strong></a> (USD 5,000 award).</p>
+        <p>Chile lies on one of the world's most active tectonic boundaries          yet access to distributed acoustic sensing (DAS) expertise and infrastructure remains extremely limited in the country. This workshop aims to help close that gap.</p>
+        <p>Over three days, participants will move from the fundamentals of fiber-optic sensing and work up to a real field deployment on the UdeC campus, followed by full data-analysis pipelines using modern open-source tools and machine learning.</p>
+        <p>The workshop is designed to democratize knowledge: is free to attend, travel scholarships are available, and we especially encourage applications from underrepresented groups, women, and early-career scientists (ECS).</p>
+        <p>Supported by the <a href="https://www.seismosoc.org/grants-and-fellowship/the-ssa-community-grants-program/" target="_blank"><strong>SSA Community Grants Program</strong></a>.</p>
       </div>
       <div>
         <div class="about-stats">
@@ -489,8 +495,8 @@
             <div class="stat-desc">Hands-on DAS training in Chile</div>
           </div>
           <div class="stat-card">
-            <div class="stat-num">$0</div>
-            <div class="stat-desc">Fee for students</div>
+            <div class="stat-num">Free</div>
+            <div class="stat-desc">Registration</div>
           </div>
         </div>
       </div>
@@ -515,13 +521,13 @@
         </div>
         <div class="day-content">
           <div class="day-title">Day 1 — Scientific overview &amp; seminars</div>
-          <div class="day-place">📍 Auditorio CFM · Universidad de Concepción</div>
-          <div class="day-desc">Invited talks covering DAS theory, fiber sensing fundamentals, and international case studies. National and international speakers will present applications in earthquake analysis, seismic imaging, seismic hazard, and structural monitoring. Space reserved for lightning talks by students and early-career researchers.</div>
+          <div class="day-place">📍 Auditorio Alamiro Rebolledo · CFM UdeC</div>
+          <div class="day-desc">Invited talks covering DAS theory, fiber sensing fundamentals, and international case studies. National and international speakers will present applications in earthquake analysis, seismic imaging, seismic hazard, structural monitoring, physics, telecommunications, among others. Space reserved for lightning talks by students and ECS.</div>
           <div class="day-tags">
             <span class="tag">DAS theory</span>
             <span class="tag">Applications</span>
             <span class="tag">Invited talks</span>
-            <span class="tag">Student talks</span>
+            <span class="tag">Student & ECS lightning talks</span>
           </div>
         </div>
       </div>
@@ -533,8 +539,8 @@
         </div>
         <div class="day-content">
           <div class="day-title">Day 2 — Instrumentation &amp; field deployment</div>
-          <div class="day-place">📍 UdeC campus · outdoor fiber-optic network</div>
-          <div class="day-desc">Hands-on experience with the DAS instrument. Participants learn deployment best practices, safety protocols, and logistical considerations, then deploy the fiber-optic cable on campus. Real seismic signals are recorded during the session — data used in Day 3.</div>
+          <div class="day-place">📍 Outdoor fiber-optic network · UdeC campus</div>
+          <div class="day-desc">Hands-on experience with the DAS instrument. Participants learn deployment best practices, safety protocols, and logistical considerations, then deploy the fiber-optic cable on campus. Real seismic signals are recorded during the session, and this data may be used in Day 3.</div>
           <div class="day-tags">
             <span class="tag">Instrumentation</span>
             <span class="tag">Field deployment</span>
@@ -550,14 +556,14 @@
         </div>
         <div class="day-content">
           <div class="day-title">Day 3 — Data processing &amp; interpretation</div>
-          <div class="day-place">📍 Universidad de Concepción · computer lab</div>
-          <div class="day-desc">Full workshop: "Introduction to DAS for Seismology." Participants work with DAS data formats, preprocessing pipelines, the DASDAE open environment, and PhaseNet-DAS machine learning tools for phase picking. Group exercises, plenary discussion on future research directions in Chile, and an evening outreach talk open to the public.</div>
-          <div class="day-tags">
+          <div class="day-place">📍 Computer Lab (TBD) · FI UdeC</div>
+          <div class="day-desc">Full workshop day: "Introduction to DAS for Seismology." Participants work with DAS data formats, preprocessing pipelines, and open-source tools, along with machine learning approaches for phase picking. The day includes group exercises, a plenary discussion on future research directions in Chile.</div>
+           <div class="day-tags">
             <span class="tag">Data formats</span>
-            <span class="tag">DASDAE</span>
-            <span class="tag">PhaseNet-DAS</span>
-            <span class="tag">ML picking</span>
-            <span class="tag">Public outreach</span>
+            <span class="tag">Open-source tools</span>
+            <span class="tag">Machine learning</span>
+            <span class="tag">Phase picking</span>
+            <span class="tag">DAS pipelines</span>
           </div>
         </div>
       </div>
@@ -572,25 +578,25 @@
   <div class="container">
     <p class="section-label">Invited speakers</p>
     <h2 class="section-title">International experts in fiber sensing</h2>
-    <p class="section-lead">Leading researchers bringing cutting-edge DAS expertise to Chile for the first time.</p>
+    <p class="section-lead">Leading researchers bringing cutting-edge DAS expertise to Chile.</p>
 
     <div class="speakers-grid">
       <div class="speaker-card">
-        <div class="speaker-avatar">EW</div>
+        <img src="images/people/EFW_photo.png" alt="Ethan F. Williams" class="speaker-avatar">
         <div class="speaker-name">Ethan F. Williams</div>
-        <div class="speaker-role">Main instructor &amp; principal speaker</div>
-        <div class="speaker-inst">Assistant Professor, Earth &amp; Planetary Sciences · UC Santa Cruz</div>
+        <div class="speaker-role">Instructor &amp; Invited speaker</div>
+        <div class="speaker-inst">Assistant Professor, Department of Earth &amp; Planetary Sciences · University of California, Santa Cruz</div>
         <div class="speaker-bio">Applies fiber-optic sensing to seismology, oceanography, and acoustics. Research spans subduction geohazards, ocean–solid Earth interaction, and structural monitoring using DAS. Ph.D. Caltech (2023). GHI Postdoctoral Scholar, University of Washington (2023–2025).</div>
-        <a href="https://ethanfwilliams.github.io/" target="_blank" class="speaker-link">↗ ethanfwilliams.github.io</a>
+        <a href="https://ethanfwilliams.github.io/" target="_blank" class="speaker-link">↗ Research Homepage</a>
       </div>
 
       <div class="speaker-card">
-        <div class="speaker-avatar">EB</div>
+        <img src="images/people/EB_photo.png" alt="Ettore Biondi" class="speaker-avatar">
         <div class="speaker-name">Ettore Biondi</div>
-        <div class="speaker-role">Invited speaker</div>
+        <div class="speaker-role">Instructor &amp; Invited speaker</div>
         <div class="speaker-inst">Assistant Professor of Geophysics · Stanford University</div>
-        <div class="speaker-bio">Research centers on fiber sensing and dense seismic arrays for geophysical applications — from volcanic system dynamics and earthquake physics to early warning systems and climate-related environmental sensing. Ph.D. Stanford (2021).</div>
-        <a href="https://geophysics.stanford.edu/people/ettore-biondi-0" target="_blank" class="speaker-link">↗ Stanford profile</a>
+        <div class="speaker-bio">Research centers on fiber sensing and dense seismic arrays for geophysical applications — from volcanic system dynamics and earthquake physics to early warning systems and climate-related environmental sensing. Ph.D. Stanford (2021). Postdoctoral Researcher and Research Scientist, Caltech (2021 - 2025). </div>
+        <a href="https://geophysics.stanford.edu/people/ettore-biondi-0" target="_blank" class="speaker-link">↗ Research Homepage</a>
       </div>
     </div>
   </div>
@@ -603,33 +609,36 @@
   <div class="container">
     <p class="section-label">Organizing committee</p>
     <h2 class="section-title">Meet the team</h2>
-    <p class="section-lead">Researchers from Universidad de Concepción and UC Santa Cruz.</p>
-
     <div class="organizers-grid">
       <div class="org-card">
-        <div class="org-avatar">CM</div>
+        <img src="images/people/CMY_photo.png" alt="Catalina Morales-Yáñez" class="speaker-avatar">
         <div class="org-name">Catalina Morales-Yáñez</div>
         <div class="org-title">Assistant Professor<br>Universidad de Concepción<br><span style="color:var(--clr-accent);font-size:11px;">Lead organizer</span></div>
+        <a href="https://cmoralesyanez.github.io/" target="_blank" class="speaker-link">↗ Research Homepage</a>
       </div>
       <div class="org-card">
-        <div class="org-avatar">JO</div>
+        <img src="images/people/JO_photo.png" alt="Javier Ojeda" class="speaker-avatar">  
         <div class="org-name">Javier Ojeda</div>
         <div class="org-title">Postdoctoral Researcher<br>Universidad de Concepción<br><span style="color:var(--clr-accent);font-size:11px;">Scientific coordination</span></div>
+        <a href="https://javierojedav.github.io/" target="_blank" class="speaker-link">↗ Research Homepage</a>
       </div>
       <div class="org-card">
-        <div class="org-avatar">EW</div>
+        <img src="images/people/EFW_photo.png" alt="Ethan F. Williams" class="speaker-avatar">
         <div class="org-name">Ethan Williams</div>
         <div class="org-title">Assistant Professor<br>UC Santa Cruz<br><span style="color:var(--clr-accent);font-size:11px;">International coord.</span></div>
+        <a href="https://ethanfwilliams.github.io/" target="_blank" class="speaker-link">↗ Research Homepage</a>
       </div>
       <div class="org-card">
-        <div class="org-avatar">GM</div>
+        <img src="images/people/GM_photo.png" alt="Gonzalo Montalva" class="speaker-avatar">
         <div class="org-name">Gonzalo Montalva</div>
         <div class="org-title">Full Professor<br>Universidad de Concepción<br><span style="color:var(--clr-accent);font-size:11px;">Local logistics</span></div>
+        <a href="https://fi.udec.cl/academicos/gonzalo-montalva-a/" target="_blank" class="speaker-link">↗ Research Homepage</a>
       </div>
       <div class="org-card">
-        <div class="org-avatar">EB</div>
+        <img src="images/people/EEB_photo.png" alt="Emily Brodsky" class="speaker-avatar">
         <div class="org-name">Emily Brodsky</div>
         <div class="org-title">Full Professor<br>UC Santa Cruz<br><span style="color:var(--clr-accent);font-size:11px;">International coord.</span></div>
+        <a href="https://seismo-sites-ucsc-edu.translate.goog/emily-brodsky/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc" target="_blank" class="speaker-link">↗ Research Homepage</a>
       </div>
     </div>
   </div>
@@ -646,15 +655,15 @@
 
     <div class="grants-box">
       <div class="grants-info">
-        <h3>Student &amp; early-career grants</h3>
-        <p>Travel scholarships are available to support participants from outside Concepción — particularly students, early-career scientists, and members of underrepresented groups who lack access to national or other funding sources.</p>
+        <h3>Student &amp; ECS grants</h3>
+        <p>Travel scholarships are available to support participants from outside Concepción — particularly students, ECS, and members of underrepresented groups who lack access to national or other funding sources.</p>
         <p>Priority is given to students and first-generation professionals. Workshop fees are fully waived for all students.</p>
       </div>
       <div>
-        <div class="grant-amount">USD 100</div>
+        <div class="grant-amount">USD $100</div>
         <div class="grant-label">Maximum grant per recipient (limited budget)</div>
         <ul class="grant-conditions">
-          <li>Open to students and early-career researchers</li>
+          <li>Open to students and ECS</li>
           <li>Priority for participants outside Concepción</li>
           <li>Priority for underrepresented groups</li>
           <li>Workshop registration required</li>
@@ -705,7 +714,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-title">DAS Workshop · Concepción 2026</div>
-    <div class="footer-sub">Training on Distributed Acoustic Sensing for earthquake research and seismic building response</div>
+    <div class="footer-sub">Training on Distributed Acoustic Sensing for Earthquake Research and Seismic Building Response</div>
     <div class="footer-contact">
       Questions? Contact us at <a href="mailto:catalinamorales@udec.cl">catalinamorales@udec.cl</a>
     </div>

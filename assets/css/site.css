@@ -150,7 +150,7 @@ a:focus-visible, button:focus-visible, .chip:focus-visible{
 }
 @media (max-width:760px){ .hero-grid{ grid-template-columns:1fr; } }
 .portrait{
-  width:100%; aspect-ratio:1/1; border-radius:var(--radius);
+  width:100%; aspect-ratio:4/5; border-radius:var(--radius);
   overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line);
 }
 .portrait img{ width:100%; height:100%; object-fit:cover; }
