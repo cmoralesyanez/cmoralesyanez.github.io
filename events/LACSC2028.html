@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VII LACSC Chile 2028 · Universidad de Concepción</title>
+<meta name="description" content="VII Assembly of the Latin American and Caribbean Seismological Commission, October 2–6, 2028, Universidad de Concepción, Chile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue-50:#c7d5ed;--blue-300:#64799e;--blue-500:#223c6a;--blue-700:#142440;--blue-900:#070c15;--yellow-300:#eab653;--yellow-500:#e69b0a;--yellow-50:#f6f4ee;--red-500:#d21428;--gray-50:#f5f5f5;--gray-200:#d1d1d1;--gray-700:#5e5e5e;--gray-900:#1a1a1a;
+--bg:#fff;--surface:var(--gray-50);--text:var(--gray-900);--muted:var(--gray-700);--head:var(--blue-500);--line:var(--gray-200);--link:var(--blue-500);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0e182a;--surface:#142440;--text:#f5f5f5;--muted:#c7d5ed;--head:#fff;--line:#435b84;--link:#eab653}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0e182a;--surface:#142440;--text:#f5f5f5;--muted:#c7d5ed;--head:#fff;--line:#435b84;--link:#eab653}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/24px Roboto,Arial,sans-serif}
+h1,h2,h3,h4{font-family:Poppins,Arial,sans-serif;color:var(--head);margin:0}
+img{max-width:100%;display:block}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--yellow-500);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:24px;min-height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--head);font:600 16px/20px Poppins,Arial,sans-serif}
+.brand img{height:44px;width:auto}.lgd{display:none}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lgb{display:none}:root:not([data-theme="light"]) .lgd{display:block}}
+nav{margin-left:auto;display:flex;gap:4px;overflow-x:auto}
+nav a{font:500 14px/20px Poppins,Arial,sans-serif;color:var(--head);text-decoration:none;padding:10px 14px;border-bottom:3px solid transparent;white-space:nowrap}
+nav a:hover{border-color:var(--yellow-500)}
+.hero{position:relative;color:#fff;background:linear-gradient(90deg,rgba(20,36,64,.94) 0%,rgba(34,60,106,.82) 55%,rgba(34,60,106,.45) 100%),url(images/campus-hero.jpg) center/cover var(--blue-700)}
+.hero .wrap{padding-top:96px;padding-bottom:96px}
+.hero h1{color:#fff;font-weight:700;font-size:70px;line-height:80px;max-width:760px}
+.hero p{margin:0}
+.where{font:500 24px/32px Poppins,Arial,sans-serif;margin-top:24px!important}
+.when{display:inline-block;margin-top:24px!important;background:var(--yellow-500);color:var(--blue-900);font:700 24px/32px Poppins,Arial,sans-serif;padding:8px 24px;border-radius:4px}
+.sub{max-width:640px;margin-top:24px!important;font-size:18px;line-height:26px;color:var(--blue-50)}
+.btns{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}
+.btn{display:inline-block;font:600 16px/24px Poppins,Arial,sans-serif;padding:12px 28px;border-radius:4px;text-decoration:none;border:2px solid #fff;color:#fff}
+.btn.pri{background:var(--yellow-500);border-color:var(--yellow-500);color:var(--blue-900)}
+.btn:hover{filter:brightness(1.1)}
+.orgs{background:var(--surface);border-bottom:1px solid var(--line)}
+.orgs .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:24px 40px;padding-top:24px;padding-bottom:24px}
+.orgs p{margin:0;font:500 14px/20px Poppins,Arial,sans-serif;color:var(--muted);max-width:220px}
+.logos{display:flex;flex-wrap:wrap;gap:24px 36px;align-items:center}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logos{background:#fff;border-radius:8px;padding:12px 28px}}
+.logos img{height:84px;width:auto}
+.logos img.w{height:84px}
+section{padding:72px 0}
+section.alt{background:var(--surface)}
+h2{font-size:40px;line-height:48px;font-weight:600}
+h2::after{content:"";display:block;width:72px;height:4px;background:var(--yellow-500);margin-top:16px}
+.lead{font:500 20px/28px Poppins,Arial,sans-serif;color:var(--head);max-width:760px;margin:24px 0 0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:32px;align-items:start}
+.cols p{margin:0 0 16px;max-width:62ch}
+.pic{border-radius:8px;width:100%;aspect-ratio:3/2;object-fit:cover}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.card div{padding:20px;border-top:4px solid var(--yellow-500)}
+.card h3{font-size:20px;line-height:28px;font-weight:500}
+.card p{margin:8px 0 0;font-size:14px;line-height:20px;color:var(--muted)}
+.team{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:40px 0 0;padding:0;list-style:none}
+.team li{background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--blue-500);border-radius:4px;padding:16px 20px}
+.team b{display:block;font:600 16px/24px Poppins,Arial,sans-serif;color:var(--head)}
+.team span{display:block;font-size:14px;line-height:20px;color:var(--muted)}
+.team em{font-style:normal;font-size:14px;line-height:20px;color:var(--muted)}
+.inst{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.inst span{border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:14px;background:var(--bg)}
+footer{background:var(--blue-700);color:#fff;padding:48px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;justify-content:space-between}
+footer h2{color:#fff;font-size:24px;line-height:32px}
+footer h2::after{display:none}
+footer p{margin:8px 0 0;color:var(--blue-50)}
+@media (max-width:1024px){.cards{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:56px;line-height:64px}h2{font-size:36px;line-height:44px}}
+@media (max-width:720px){.hero .wrap{padding-top:56px;padding-bottom:56px}.hero h1{font-size:40px;line-height:48px}.where,.when{font-size:20px;line-height:28px}h2{font-size:28px;line-height:36px}.cols,.cards{grid-template-columns:1fr}section{padding:48px 0}header .wrap{flex-wrap:wrap;gap:0}nav{margin-left:-14px;width:100%}.brand span{display:none}.logos img{height:64px}.logos img.w{height:60px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#top"><img class="lgb" src="images/logo-udec-azul.png" alt="Universidad de Concepción"><img class="lgd" src="images/logo-udec-blanco.png" alt="Universidad de Concepción"><span>VII LACSC Chile 2028</span></a>
+<nav aria-label="Main"><a href="#about">About</a><a href="#concepcion">Concepción</a><a href="#fieldtrip">Field trip</a><a href="#team">Local team</a></nav>
+</div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<h1>VII Assembly of LACSC Chile</h1>
+<p class="where">Universidad de Concepción · Concepción, Chile</p>
+<p class="when">October 2–6, 2028</p>
+<p class="sub">The Latin American and Caribbean Seismological Commission meets in Concepción: technical sessions, field trips to remarkable geological sites and community activities.</p>
+<div class="btns"><a class="btn pri" href="#about">About the assembly</a><a class="btn" href="#fieldtrip">See the field trip</a></div>
+</div></div>
+<div class="orgs"><div class="wrap">
+<p>Organized under the umbrella of</p>
+<div class="logos">
+<img src="images/logo-lacsc.png" alt="LACSC, Latin America and Caribbean Seismological Commission (IUGG-IASPEI)">
+<img class="w" src="images/logo-iugg-iaspei.png" alt="IUGG, International Union of Geodesy and Geophysics, and IASPEI, International Association of Seismology and Physics of the Earth’s Interior">
+</div></div></div>
+
+<section id="about"><div class="wrap">
+<h2>Welcome to the VII LACSC Assembly</h2>
+<p class="lead">We are delighted to invite you to the VII Assembly of the Latin American and Caribbean Seismological Commission (LACSC), to be held in 2028 at the Universidad de Concepción (UdeC).</p>
+<div class="cols"><div>
+<p>The assembly will bring together leading researchers, professionals and students from around the world to share knowledge, foster collaboration and explore advances in seismology and earth sciences.</p>
+<p>Our organizing committee, composed of experts from major Chilean universities, is preparing an inspiring program featuring technical sessions, field trips to remarkable geological sites and engaging community activities.</p>
+<p>Beyond the scientific agenda, you will experience Chilean culture, cuisine and hospitality. We are committed to creating an inclusive and memorable event for all participants.</p>
+<p><b>Mark your calendars: October 2–6, 2028.</b></p>
+</div><img class="pic" src="images/campus-aerial.jpg" alt="Aerial view of the Universidad de Concepción campus" loading="lazy"></div>
+</div></section>
+
+<section id="concepcion" class="alt"><div class="wrap">
+<h2>Why Concepción</h2>
+<p class="lead">A vibrant city, renowned for its scientific spirit and stunning natural surroundings.</p>
+<div class="cols"><img class="pic" src="images/concepcion-city.jpg" alt="Aerial view of Concepción and the Biobío River" loading="lazy"><div>
+<p>Concepción offers modern infrastructure, convenient transportation and a welcoming environment. The city sits on the Chilean margin, where the subduction of the Nazca plate shapes both the landscape and the region’s seismic history.</p>
+<p>That makes it a natural meeting point for a community that studies earthquakes, and a good base for exploring the geology of south-central Chile.</p>
+</div></div>
+</div></section>
+
+<section id="fieldtrip"><div class="wrap">
+<h2>Field trip</h2>
+<p class="lead">Four ways to see the seismic and volcanic landscape of Chile up close.</p>
+<div class="cards">
+<article class="card"><img src="images/campus-naturaleza.jpg" alt="Walking trail in Campus Naturaleza" loading="lazy"><div><h3>Campus Naturaleza</h3><p>Visit to the Campus Naturaleza conservation area.</p></div></article>
+<article class="card"><img src="images/coast.jpg" alt="Rocky Pacific coastline" loading="lazy"><div><h3>Coastal evidence</h3><p>Coastal evidence of the seismic cycle and geology.</p></div></article>
+<article class="card"><img src="images/volcano.jpg" alt="Snow-capped active volcano" loading="lazy"><div><h3>Active volcano</h3><p>A visit to an active volcano.</p></div></article>
+<article class="card"><img src="images/earthquake-walk.jpg" alt="Earthquake-damaged building in Concepción" loading="lazy"><div><h3>Earthquake walking tour</h3><p>A walking tour of the city and its earthquake legacy.</p></div></article>
+</div>
+</div></section>
+
+<section id="team" class="alt"><div class="wrap">
+<h2>Local team</h2>
+<p class="lead">Researchers from four Chilean universities are organizing the assembly.</p>
+<ul class="team">
+<li><b>Catalina Morales Yáñez</b><span>Geophysics Department</span><em>Universidad de Concepción</em></li>
+<li><b>Sergio Ruiz</b><span>Geophysics Department</span><em>Universidad de Chile</em></li>
+<li><b>Francisco Ortega Culaciati</b><span>Geophysics Department</span><em>Universidad de Chile</em></li>
+<li><b>Efraín Rivera Berríos</b><span>Civil Engineering Department</span><em>Universidad Católica del Maule</em></li>
+<li><b>Francisco Pastén Araya</b><span>Civil Engineering Department</span><em>Universidad Católica del Maule</em></li>
+<li><b>Gonzalo Montalva</b><span>Civil Engineering Department</span><em>Universidad de Concepción</em></li>
+<li><b>Verónica Oliveros</b><span>Earth Sciences Department</span><em>Universidad de Concepción</em></li>
+<li><b>Roberto Benavente</b><span>Civil Engineering Department</span><em>UC de la Santísima Concepción</em></li>
+<li><b>Kellen Azúa</b><span>Geophysics Department</span><em>Universidad de Chile</em></li>
+<li><b>Javier Ojeda</b><span>EASER Project</span><em>Universidad de Concepción</em></li>
+<li><b>Valeria Cortés Rivas</b><span>IMO Project</span><em>Universidad de Concepción</em></li>
+</ul>
+<div class="inst"><span>Universidad de Concepción</span><span>Universidad Católica del Maule</span><span>Universidad de Chile</span><span>Universidad Católica de la Santísima Concepción</span></div>
+</div></section>
+</main>
+<footer><div class="wrap">
+<img src="images/logo-udec-blanco.png" alt="Universidad de Concepción" style="height:64px;width:auto">
+<div><h2>VII LACSC 2028</h2><p>Universidad de Concepción, Concepción, Chile · October 2–6, 2028</p></div>
+<p>More information soon.</p>
+</div></footer>
+</body>
+</html>
