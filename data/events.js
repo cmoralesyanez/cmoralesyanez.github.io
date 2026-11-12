@@ -9,6 +9,15 @@
 const EVENTS = [
   {
     year: 2026,
+    type: "VII LACSC Assembly",
+    title: "VII Assembly of the Latin American and Caribbean Seismological Commission (LACSC)",
+    role: "Lead organizer",
+    venue: "Universidad de Concepción, Chile · Oct 2–6, 2026",
+    url: "",
+    page: "events/LACSC2028.html"
+  },
+  {
+    year: 2026,
     type: "workshop",
     title: "DAS Workshop — Training on Distributed Acoustic Sensing for Earthquake Research",
     role: "Lead organizer",
